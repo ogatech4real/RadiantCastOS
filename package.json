@@ -1,0 +1,5 @@
+{
+  "name": "radiantcastos",
+  "private": true,
+  "workspaces": ["apps/*"]
+}
