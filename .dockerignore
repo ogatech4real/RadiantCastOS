@@ -1,0 +1,28 @@
+# Git
+.git
+.gitignore
+
+# Node / Next
+node_modules
+**/node_modules
+.next
+**/.next
+out
+**/out
+dist
+**/dist
+
+# Python
+.venv
+**/.venv
+__pycache__
+**/__pycache__
+*.pyc
+
+# Misc
+.DS_Store
+*.log
+
+# Local env
+.env
+**/.env
