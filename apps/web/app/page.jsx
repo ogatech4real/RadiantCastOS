@@ -1,120 +1,122 @@
 
+import NeonShell from "./_ui/NeonShell";
+import { pageBg, container, section, sectionAlt, h1, h2, muted, grid, card, btnPrimary, btnSecondary, hr, pill } from "./_ui/neonStyles";
+
 export default function Home() {
   return (
-    <main style={{
-      minHeight: "100vh",
-      background: "radial-gradient(1200px 600px at 10% -10%, rgba(0,255,255,0.15), transparent), radial-gradient(800px 400px at 90% 10%, rgba(180,0,255,0.18), transparent), #05070d",
-      color: "#e6f1ff",
-      overflowX: "hidden"
-    }}>
-      <section style={{ padding: "96px 24px", maxWidth: 1200, margin: "0 auto" }}>
-        <h1 style={{
-          fontSize: "clamp(2.8rem, 6vw, 4.5rem)",
-          lineHeight: 1.05,
-          marginBottom: 24,
-          background: "linear-gradient(90deg, #7df9ff, #c77dff)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent"
-        }}>
-          Build and broadcast your radio station in minutes
-        </h1>
-        <p style={{ maxWidth: 720, fontSize: 20, opacity: 0.9 }}>
-          RadiantCastOS is an AI-native, cloud-first radio platform. Live streaming, AutoDJ,
-          smart routing, analytics, and secure scaling — all in one control plane.
-        </p>
-        <div style={{ display: "flex", gap: 16, marginTop: 32, flexWrap: "wrap" }}>
-          <a href="/register" style={primaryBtn}>Create free station</a>
-          <a href="/pricing" style={secondaryBtn}>View pricing</a>
-        </div>
-      </section>
-
-      <section style={section}>
-        <h2 style={sectionTitle}>Why RadiantCastOS</h2>
-        <div style={grid}>
-          {[
-            ["AI-aware stream routing", "Automatic source switching, silence detection, and resilient playback."],
-            ["Live + AutoDJ", "Hybrid broadcasting with failover and scheduled content."],
-            ["HLS delivery", "Low-latency, globally compatible streaming."],
-            ["Observability built-in", "Health checks, metrics, and future analytics hooks."],
-            ["Security-first", "JWT, role-based access, and hardened edges."],
-            ["Multi-station ready", "Run one station or hundreds from the same platform."]
-          ].map(([title, desc]) => (
-            <div key={title} style={card}>
-              <h3 style={{ marginBottom: 8 }}>{title}</h3>
-              <p style={{ opacity: 0.85 }}>{desc}</p>
+    <div style={pageBg}>
+      <NeonShell active="home" />
+      <main>
+        <section style={{ ...section }}>
+          <div style={{ ...container(1200), paddingTop: 34, paddingBottom: 8, textAlign: "left" }}>
+            <div style={pill}>
+              <span style={{ width: 8, height: 8, borderRadius: 999, background: "#7df9ff", boxShadow: "0 0 18px rgba(125,249,255,0.75)" }} />
+              <span>AI-native • multi-station • production-ready</span>
             </div>
-          ))}
-        </div>
-      </section>
 
-      <section style={sectionAlt}>
-        <h2 style={sectionTitle}>How it works</h2>
-        <ol style={{ maxWidth: 800, margin: "0 auto", fontSize: 18, lineHeight: 1.8 }}>
-          <li>Register and access your dashboard</li>
-          <li>Create a station and choose Live, AutoDJ, or Hybrid mode</li>
-          <li>Connect your source or upload content</li>
-          <li>Go live and share your stream globally</li>
-        </ol>
-      </section>
+            <h1 style={{ ...h1, marginTop: 18 }}>Build and broadcast your radio station in minutes</h1>
 
-      <section style={section}>
-        <h2 style={sectionTitle}>Pricing</h2>
-        <div style={grid}>
-          <div style={card}>
-            <h3>Free</h3>
-            <p>1 station · Limited listeners · Community support</p>
-            <p style={price}>£0</p>
-            <a href="/register" style={primaryBtn}>Start free</a>
-          </div>
-          <div style={{ ...card, outline: "1px solid #7df9ff" }}>
-            <h3>Pro</h3>
-            <p>Multiple stations · Higher bitrate · Advanced analytics</p>
-            <p style={price}>£XX / month</p>
-            <a href="/billing" style={primaryBtn}>Upgrade to Pro</a>
-          </div>
-          <div style={card}>
-            <h3>Business</h3>
-            <p>SSO · SLA · Dedicated routing · Audit logs</p>
-            <p style={price}>Custom</p>
-            <a href="#" style={secondaryBtn}>Contact sales</a>
-          </div>
-        </div>
-      </section>
+            <p style={{ ...muted, maxWidth: 760, fontSize: 20, lineHeight: 1.7, marginTop: 16 }}>
+              RadiantCastOS is an AI-native, cloud-first radio platform. Live streaming, AutoDJ,
+              smart routing, analytics, and secure scaling — all in one control plane.
+            </p>
 
-      <section style={{ padding: "96px 24px", textAlign: "center" }}>
-        <h2 style={sectionTitle}>Launch your station today</h2>
-        <p style={{ maxWidth: 640, margin: "0 auto 32px", opacity: 0.9 }}>
-          Start free. Upgrade when you’re ready. Built to scale with you.
-        </p>
-        <a href="/register" style={primaryBtn}>Get started</a>
-      </section>
-    </main>
+            <div style={{ display: "flex", gap: 14, marginTop: 28, flexWrap: "wrap" }}>
+              <a href="/get-started" style={btnPrimary}>Get started</a>
+              <a href="/pricing" style={btnSecondary}>View pricing</a>
+              <a href="/demo/player" style={btnSecondary}>See player demo</a>
+            </div>
+
+            <div style={hr} />
+
+            <div style={{ display: "flex", gap: 18, flexWrap: "wrap", fontSize: 13, opacity: 0.8 }}>
+              <span>✅ Cloudflare-ready edge posture</span>
+              <span>✅ Fly deployable control plane</span>
+              <span>✅ Supabase-backed identity + data</span>
+              <span>✅ Router worker foundation</span>
+            </div>
+          </div>
+        </section>
+
+        <section style={sectionAlt}>
+          <div style={container(1200)}>
+            <h2 style={{ ...h2, textAlign: "center", marginBottom: 26 }}>Why RadiantCastOS</h2>
+            <div style={grid}>
+              {[
+                ["AI-aware stream routing", "Automatic source switching, silence detection, and resilient playback."],
+                ["Live + AutoDJ", "Hybrid broadcasting with failover and scheduled content."],
+                ["HLS delivery", "Low-latency, globally compatible streaming."],
+                ["Observability built-in", "Health checks, metrics, and future analytics hooks."],
+                ["Security-first", "JWT, role-based access, and hardened edges."],
+                ["Multi-station ready", "Run one station or hundreds from the same platform."]
+              ].map(([title, desc]) => (
+                <div key={title} style={card}>
+                  <h3 style={{ marginTop: 0, marginBottom: 8 }}>{title}</h3>
+                  <p style={{ ...muted, margin: 0, lineHeight: 1.7 }}>{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section style={section}>
+          <div style={container(1200)}>
+            <h2 style={{ ...h2, textAlign: "center", marginBottom: 18 }}>How it works</h2>
+            <p style={{ ...muted, textAlign: "center", maxWidth: 860, margin: "0 auto 28px", lineHeight: 1.7 }}>
+              A clean, scalable workflow that supports both creators and teams. Every step is designed to upgrade smoothly into advanced routing, billing, and analytics.
+            </p>
+            <div style={{ ...grid, gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
+              {[
+                ["1) Register", "Create your account and enter the control plane."],
+                ["2) Create station", "Pick a name, slug, and mode (Live / AutoDJ / Hybrid)."],
+                ["3) Connect sources", "Attach live inputs, AutoDJ playlists, and fallback sources."],
+                ["4) Go live", "Publish a player link, embed it, and track listener stats."]
+              ].map(([t, d]) => (
+                <div key={t} style={card}>
+                  <div style={{ fontWeight: 900, marginBottom: 8 }}>{t}</div>
+                  <div style={{ ...muted, lineHeight: 1.7 }}>{d}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section style={sectionAlt}>
+          <div style={container(1200)}>
+            <h2 style={{ ...h2, textAlign: "center", marginBottom: 26 }}>Pricing</h2>
+            <div style={grid}>
+              <div style={card}>
+                <h3 style={{ marginTop: 0 }}>Free</h3>
+                <p style={muted}>1 station · Limited listeners · Community support</p>
+                <p style={{ fontSize: 28, margin: "16px 0", fontWeight: 900 }}>£0</p>
+                <a href="/register" style={btnPrimary}>Start free</a>
+              </div>
+              <div style={{ ...card, outline: "1px solid rgba(125,249,255,0.8)" }}>
+                <h3 style={{ marginTop: 0 }}>Pro</h3>
+                <p style={muted}>Multi-station · Higher bitrate · Analytics · Custom domain</p>
+                <p style={{ fontSize: 28, margin: "16px 0", fontWeight: 900 }}>£XX / month</p>
+                <a href="/pricing" style={btnPrimary}>Compare plans</a>
+              </div>
+              <div style={card}>
+                <h3 style={{ marginTop: 0 }}>Business</h3>
+                <p style={muted}>SSO · SLA · Dedicated routing · Audit logs</p>
+                <p style={{ fontSize: 28, margin: "16px 0", fontWeight: 900 }}>Custom</p>
+                <a href="/pricing" style={btnSecondary}>Talk to sales</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section style={section}>
+          <div style={{ ...container(1200), textAlign: "center" }}>
+            <h2 style={{ ...h2, marginBottom: 14 }}>Launch your station today</h2>
+            <p style={{ ...muted, maxWidth: 680, margin: "0 auto 26px", lineHeight: 1.7 }}>
+              Start free. Upgrade when you’re ready. Built to scale with you.
+            </p>
+            <a href="/get-started" style={btnPrimary}>Get started</a>
+          </div>
+        </section>
+      </main>
+    </div>
   );
 }
-
-const section = { padding: "96px 24px", maxWidth: 1200, margin: "0 auto" };
-const sectionAlt = { ...section, background: "rgba(255,255,255,0.02)" };
-const sectionTitle = { fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: 32, textAlign: "center" };
-const grid = { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 };
-const card = {
-  padding: 24,
-  borderRadius: 16,
-  background: "linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))",
-  backdropFilter: "blur(8px)"
-};
-const price = { fontSize: 28, margin: "16px 0" };
-const primaryBtn = {
-  padding: "14px 22px",
-  borderRadius: 999,
-  background: "linear-gradient(90deg, #7df9ff, #c77dff)",
-  color: "#05070d",
-  fontWeight: 600,
-  textDecoration: "none"
-};
-const secondaryBtn = {
-  padding: "14px 22px",
-  borderRadius: 999,
-  border: "1px solid rgba(255,255,255,0.3)",
-  color: "#e6f1ff",
-  textDecoration: "none"
-};
