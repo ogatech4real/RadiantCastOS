@@ -11,7 +11,7 @@ export const metadata = {
 export default function Dashboard() {
   return (
     <div style={pageBg}>
-      <NeonShell active="dashboard" />
+      <NeonShell />
       <main style={{ ...container(1200), ...section }}>
         <div style={{ display: "flex", justifyContent: "space-between", gap: 16, alignItems: "flex-end", flexWrap: "wrap" }}>
           <div>
@@ -74,7 +74,7 @@ export default function Dashboard() {
               ["Connect Supabase Auth", "Add login gating and persist user sessions across the dashboard."],
               ["Enable subscriptions", "Stripe checkout + webhooks + plan gating."],
               ["Activate router worker", "Multi-station router with source switching, silence detection, and metrics."],
-              ["Analytics", "Listener counts, engagement funnels, and playback quality metrics (foundation)."]
+              ["Analytics", "Listener counts, engagement funnels, and playback quality metrics."]
             ].map(([t, d]) => (
               <div key={t} style={{ padding: 14, borderRadius: 16, border: "1px solid rgba(255,255,255,0.10)", background: "rgba(0,0,0,0.18)" }}>
                 <div style={{ fontWeight: 800 }}>{t}</div>

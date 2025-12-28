@@ -1,6 +1,6 @@
 
 import NeonShell from "../_ui/NeonShell";
-import { pageBg, container, section, h1, h2, muted, card, grid, btnPrimary, btnSecondary, hr } from "../_ui/neonStyles";
+import { pageBg, container, section, h1, muted, card, grid, btnPrimary, btnSecondary, hr } from "../_ui/neonStyles";
 
 export const metadata = {
   title: "Pricing | RadiantCastOS",
@@ -34,7 +34,7 @@ const plans = [
       "Priority support",
       "Automation + routing policies",
     ],
-    cta: { href: "/dashboard?upgrade=pro", label: "Upgrade to Pro", primary: true },
+    cta: { href: "/billing", label: "Upgrade to Pro", primary: true },
   },
   {
     name: "Business",
@@ -54,7 +54,7 @@ const plans = [
 export default function Pricing() {
   return (
     <div style={pageBg}>
-      <NeonShell active="pricing" />
+      <NeonShell />
       <main style={{ ...container(1100), ...section }}>
         <div style={{ textAlign: "center" }}>
           <h1 style={{ ...h1 }}>Pricing designed for momentum</h1>
@@ -77,7 +77,7 @@ export default function Pricing() {
               }}
             >
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 12 }}>
-                <h2 style={{ ...h2, fontSize: 26 }}>{p.name}</h2>
+                <h2 style={{ fontSize: 26, margin: 0 }}>{p.name}</h2>
                 <div style={{ fontSize: 22, fontWeight: 800 }}>{p.price}</div>
               </div>
               <p style={{ ...muted, marginTop: 10 }}>{p.tagline}</p>

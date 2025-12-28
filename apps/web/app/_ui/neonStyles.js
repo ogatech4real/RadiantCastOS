@@ -27,14 +27,8 @@ export const container = (maxWidth = 1200) => ({
   padding: "0 24px",
 });
 
-export const section = {
-  padding: "84px 0",
-};
-
-export const sectionAlt = {
-  padding: "84px 0",
-  background: "rgba(255,255,255,0.02)",
-};
+export const section = { padding: "84px 0" };
+export const sectionAlt = { padding: "84px 0", background: "rgba(255,255,255,0.02)" };
 
 export const h1 = {
   fontSize: "clamp(2.6rem, 6vw, 4.4rem)",
