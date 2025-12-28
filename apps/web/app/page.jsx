@@ -2,21 +2,26 @@
 import NeonShell from "./_ui/NeonShell";
 import { pageBg, container, section, sectionAlt, h1, h2, muted, grid, card, btnPrimary, btnSecondary, hr, pill } from "./_ui/neonStyles";
 
+export const metadata = {
+  title: "RadiantCastOS | AI-native Radio Platform",
+  description: "Create, manage, and scale online radio stations with AI-aware routing and modern streaming delivery."
+};
+
 export default function Home() {
   return (
     <div style={pageBg}>
-      <NeonShell active="home" />
+      <NeonShell />
       <main>
-        <section style={{ ...section }}>
-          <div style={{ ...container(1200), paddingTop: 34, paddingBottom: 8, textAlign: "left" }}>
+        <section style={section}>
+          <div style={{ ...container(1200), paddingTop: 34, paddingBottom: 8 }}>
             <div style={pill}>
               <span style={{ width: 8, height: 8, borderRadius: 999, background: "#7df9ff", boxShadow: "0 0 18px rgba(125,249,255,0.75)" }} />
-              <span>AI-native • multi-station • production-ready</span>
+              <span>Bold AI-tech • multi-station • production-ready</span>
             </div>
 
             <h1 style={{ ...h1, marginTop: 18 }}>Build and broadcast your radio station in minutes</h1>
 
-            <p style={{ ...muted, maxWidth: 760, fontSize: 20, lineHeight: 1.7, marginTop: 16 }}>
+            <p style={{ ...muted, maxWidth: 820, fontSize: 20, lineHeight: 1.7, marginTop: 16 }}>
               RadiantCastOS is an AI-native, cloud-first radio platform. Live streaming, AutoDJ,
               smart routing, analytics, and secure scaling — all in one control plane.
             </p>
@@ -29,11 +34,11 @@ export default function Home() {
 
             <div style={hr} />
 
-            <div style={{ display: "flex", gap: 18, flexWrap: "wrap", fontSize: 13, opacity: 0.8 }}>
-              <span>✅ Cloudflare-ready edge posture</span>
-              <span>✅ Fly deployable control plane</span>
+            <div style={{ display: "flex", gap: 18, flexWrap: "wrap", fontSize: 13, opacity: 0.82 }}>
               <span>✅ Supabase-backed identity + data</span>
+              <span>✅ Fly deployable API control plane</span>
               <span>✅ Router worker foundation</span>
+              <span>✅ Security-first posture</span>
             </div>
           </div>
         </section>
@@ -45,7 +50,7 @@ export default function Home() {
               {[
                 ["AI-aware stream routing", "Automatic source switching, silence detection, and resilient playback."],
                 ["Live + AutoDJ", "Hybrid broadcasting with failover and scheduled content."],
-                ["HLS delivery", "Low-latency, globally compatible streaming."],
+                ["HLS delivery", "Globally compatible delivery with modern playback."],
                 ["Observability built-in", "Health checks, metrics, and future analytics hooks."],
                 ["Security-first", "JWT, role-based access, and hardened edges."],
                 ["Multi-station ready", "Run one station or hundreds from the same platform."]
@@ -63,7 +68,7 @@ export default function Home() {
           <div style={container(1200)}>
             <h2 style={{ ...h2, textAlign: "center", marginBottom: 18 }}>How it works</h2>
             <p style={{ ...muted, textAlign: "center", maxWidth: 860, margin: "0 auto 28px", lineHeight: 1.7 }}>
-              A clean, scalable workflow that supports both creators and teams. Every step is designed to upgrade smoothly into advanced routing, billing, and analytics.
+              A clean, scalable workflow that upgrades smoothly into advanced routing, billing, and analytics.
             </p>
             <div style={{ ...grid, gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
               {[
