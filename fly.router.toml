@@ -1,0 +1,21 @@
+app = "radiantcastos-router"
+primary_region = "lhr"
+
+[build]
+  dockerfile = "router/Dockerfile"
+
+[env]
+  ROUTER_HTTP_PORT = "9102"  # private health/metrics port if your router uses it
+  HLS_ROOT = "/hls"
+
+[processes]
+  worker = "python -m app.router"
+
+[[mounts]]
+  source = "hlsdata"
+  destination = "/hls"
+
+[[vm]]
+  memory = "1024mb"
+  cpu_kind = "shared"
+  cpus = 1

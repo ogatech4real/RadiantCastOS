@@ -5,11 +5,12 @@ WORKDIR /app
 RUN adduser --disabled-password --gecos "" appuser
 RUN pip install --no-cache-dir -U pip
 
-COPY pyproject.toml /app/pyproject.toml
+# Point explicitly to backend
+COPY backend/pyproject.toml /app/pyproject.toml
 RUN pip install --no-cache-dir .
 
-COPY app /app/app
-COPY alembic.ini /app/alembic.ini
+COPY backend/app /app/app
+COPY backend/alembic.ini /app/alembic.ini
 
 USER appuser
 
